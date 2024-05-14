@@ -1,0 +1,400 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+}
+body {
+    background-color: #001;
+    display: flex;
+}
+
+.menu {
+    position: fixed;
+    background-color: #123;
+    width: 50px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.menu:hover{ 
+    width: 20%;
+}
+.menu:hover + .content {
+    margin-left: 15%; 
+}
+ul {
+    list-style: none;
+    position: relative;
+    height: 95%;
+   
+}
+ul li a{
+    display:  block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0 ;
+    border-radius:  8px ;
+    display: flex;
+    align-items:  center;
+    gap: 40px ;
+    transition: .5s;
+}
+ul li a:hover,.active{
+    background-color: #ffffff55;
+}
+.log-out{ 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.log-out a {
+    background-color: #345 ;
+}
+ul li a i {
+    color: gray;
+    font-size: 30px;
+
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.image-box{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 3px solid gray;
+    flex-shrink: 0;
+}
+.image-box img { 
+    width: 100%;
+    
+}
+.image-ensa-box {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    
+}
+.image-ensa-box img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    
+}
+.content { 
+    width: 100%;
+    margin: 10px ; 
+    transition: 0.8s;
+}
+
+.search { 
+    width: 45%;
+    margin: var(--padding) auto;
+    --padding: 0.9% ;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #003366;
+    transition: box-shadow 0.25s ;
+    gap: 38%;
+}
+.search-input{
+    font-size: 110%;
+    font-family: sans-serif;
+    color: white;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+}
+.search:focus-within{
+   box-shadow: 0 0 15px whitesmoke;
+   gap: 4%;
+}
+.search-input::placeholder ,.search-icon{
+    color:white;
+}
+.informations{
+    display: flex;
+    gap: 2vh;
+    flex-direction: column;
+    margin:0 25% ;
+    margin-top: 5%;
+}
+
+
+.informations input {
+    width: 96%;
+    font-size: 30px;
+}
+
+.informations select{
+    width: 99%;
+    border: none;
+    appearance: none;
+    color:black;
+    font-size: 30px;
+
+}
+.informations select option {
+    color: black;
+    height: 25px;
+    font-size: 25px;
+}
+.text-info{
+   display: flex;
+   align-items:center ;
+   gap: 5%;
+}
+.text-info h2 {
+    font-size: 30px;
+    color: white;
+}
+.text-info h4{
+    font-size: 20px;
+    color: gray;
+}
+.add-info{
+    background-color: white;
+    font-size: 110%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 17px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px whitesmoke;
+    width:100%;
+    color: black ;
+}
+
+
+.description {
+    width: 96.5%;
+    padding: 15px;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    font-size: 25px;
+    border-color:gray;
+    margin-top: 20px;
+    color: black;
+    max-height: 300px;
+    
+}
+.description :is(:focus ,:valid){
+    border-color:  rgb(51, 117, 171) ;
+    border-width: 2px;
+    
+}
+.description::-webkit-scrollbar{
+    width: 0px;
+}
+.valide-button{
+    background-color: #003366;
+    height: 60px;
+    width: 100%;
+    border-radius: 18px;
+    font-size: 25px;
+    font-family: sans-serif;
+    
+    margin-left: 0 ;
+    margin-top: 25px;
+    cursor: pointer;
+}
+.valide-button:hover{
+    box-shadow:   0 0 15px white;
+}
+
+#image-preview {
+    display: flex;
+    flex-direction: row;
+   /* flex-wrap: wrap; */
+}
+
+.preview-image {
+    max-width: 20%;
+    max-height: 200px;
+    margin: 0 10px 10px 0; /* Add margin between images */
+}
+
+
+
+
+@media (max-width: 800px){
+  
+
+    .search{
+        width: 70%;
+        margin-left: 22%;
+    }
+    
+}
+@media (max-width: 1100px){
+
+   
+   
+    .search{
+        width: 70%;
+        margin-left: 22%;
+    }
+    
+    
+}
+@media (max-height: 650px){
+ 
+    ul li a p,.username{
+        display: none;
+    }
+   
+    .row{
+        width: 70%;
+    }
+    .search{
+        width: 70%;
+        margin-left: 25%;
+    }
+  
+    .menu{
+        width:30px;
+        
+    }
+    .menu:hover{
+        width: 30px;
+    }
+    .menu:hover + .content { 
+        margin-left: 0px;
+    }
+    ul li a {
+        padding: 8px 0; 
+    }
+    .image-box{
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+    }
+   
+    .log-out a,ul li a:hover,.active{
+        background-color:initial;
+    }
+    .informations select{
+        width: 115%;
+    }
+    
+}
+    
+    
+
+@media (max-width: 550px){
+ 
+  
+    ul li a p,.username{
+        display: none;
+    }
+   
+    .row{
+        width: 70%;
+    }
+    .search{
+        width: 70%;
+        margin-left: 25%;
+    }
+  
+    .menu{
+        width:30px;
+        
+    }
+    .menu:hover{
+        width: 30px;
+    }
+    .menu:hover + .content { 
+        margin-left: 0px;
+    }
+    ul li a {
+        padding: 8px 0; 
+    }
+    .image-box{
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+    }
+   
+    .log-out a,ul li a:hover,.active{
+        background-color:initial;
+    }
+    .informations select{
+        width: 115%;
+    }
+    
+}
+@media (max-width: 299px){
+    footer{
+        
+        bottom: unset;
+    }
+    .col{
+        flex-basis: 100%;
+    }
+   
+    ul li a p,.username{
+        display: none;
+    }
+ 
+    .row{
+        width: 75%;
+    }
+    .search{
+        width: 70%;
+        margin-left: 25%;
+    }
+   
+    .menu{
+        width:20px;
+        
+    }
+    .menu:hover{
+        width: 20px;
+    }
+    .menu:hover + .content { 
+        margin-left: 0px;
+    }
+    ul li a {
+        padding: 8px 0; 
+    }
+    .image-box{
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+    }
+   
+    .log-out a,ul li a:hover,.active{
+        background-color:initial;
+    }
+    
+    h2{
+        font-size: 20px;
+    }
+  
+    .fa-magnifying-glass{
+        display: none;
+    }
+    .informations select{
+        width: 120%;
+    }
+    .text-info{
+        flex-direction: column;
+    }
+}

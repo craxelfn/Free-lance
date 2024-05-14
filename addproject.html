@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add=project-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Responsive Side Menu Bar</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="image-ensa-box">
+                        <img src="image-ensa.png" alt="image-ensa">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="active" href="index.html" target="_blank">
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-table"></i>
+                    <p>Categorie</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Inbox</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-simple"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-group"></i>
+                    <p>Contact</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-star"></i>
+                    <p>Favorit</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-sliders"></i>
+                    <p>Settings</p>
+                </a>
+            </li>
+            <li>
+                <a href="addproject.html" target="_blank">
+                    <i class="fas fa-plus"></i>
+                    <p>Add Project</p>
+                </a>
+            </li>
+            <li class="profile">
+                <div class="image-box">
+                    <img src="avatar.PNG" alt="profile">
+                </div>
+                <h2>Oussama Lakrafi</h2>
+            </li>
+            <li class="log-out">
+                <a href="login/index.html">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search">
+            <i class="search-icon fas fa-search"></i>
+            <input class="search-input" type="search" placeholder="Recherche">
+        </div>
+        <form action="store_product.php" method="post" enctype="multipart/form-data" class="informations">
+            <div class="text-info">
+                <h2>Obligatoire:</h2>
+                <h4>Donner le plus de détails possible</h4>
+            </div>
+            <input type="file" name="product_images[]" accept="image/*" class="add-info" multiple >
+            <div id="image-preview"></div>
+            <input type="text" class="add-info" placeholder="Titre" maxlength="100">
+            <input type="number" class="add-info" placeholder="Prix">
+            <select class="add-info">
+                <option value="">Sélectionner une catégorie</option>
+                <option value="first">Web</option>
+                <option value="third">Design</option>
+                <option value="second">Mobile</option>
+            </select>
+            <input type="date" class="add-info" placeholder="Date maximum">
+            <textarea placeholder="Description" class="description" id="myTextarea"></textarea>
+            <input type="submit" value="Valider" class="valide-button">
+        </form>
+    </div>
+
+    <script>
+        function adjustHeight() {
+            var textarea = document.getElementById("myTextarea");
+            textarea.style.height = "";
+            textarea.style.height = (textarea.scrollHeight) + "px";
+        }
+        adjustHeight();
+        document.getElementById("myTextarea").addEventListener("input", adjustHeight);
+    </script>
+    <script>
+ function previewImages(event) {
+    var preview = document.getElementById('image-preview');
+    preview.innerHTML = '';
+    
+    var files = event.target.files;
+    var maxImages = 5; 
+    
+    if (files.length > maxImages) {
+        alert('Maximum ' + maxImages + ' images allowed.');
+        return;
+    }
+    
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('preview-image'); 
+            preview.appendChild(img);
+        }
+        
+        reader.readAsDataURL(file);
+    }
+}
+
+// Add event listener to the file input
+var fileInput = document.querySelector('input[type="file"]');
+fileInput.addEventListener('change', function(event) {
+    previewImages(event);
+});
+    </script>
+</body>
+</html>

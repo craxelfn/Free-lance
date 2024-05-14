@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Input File Upload 1</title>
+    <style>
+        .btn-warning{
+  position: relative;
+  padding: 11px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #ffc100;
+  border: 0;
+  transition: 0.2s;
+  overflow: hidden; \\ L
+}
+
+.btn-warning input[type = "file"]{
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(3);
+  opacity: 0;
+}
+
+.btn-warning:hover{
+  background-color: #d9a400;
+}
+    </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="upload">
+      <button type = "button" class = "btn-warning">
+        <i class = "fa fa-upload"></i> Upload File
+        <input type="file">
+      </button>
+    </div>
+  </body>
+</html>
